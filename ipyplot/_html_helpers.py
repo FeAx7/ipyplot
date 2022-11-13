@@ -57,9 +57,9 @@ def _create_tabs(
         Best to keep between 1.0~5.0.
         Defaults to 2.5.
     show_url : bool, optional
-        Defines if the urls are displayed as text above the images. 
+        Defines if the urls are displayed as text above the images.
     force_b64 : bool, optional
-        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.  
+        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.
         Do mind that using b64 conversion vs reading directly from filepath will be slower.
         You might need to set this to `True` in environments like Google colab.
         Defaults to False.
@@ -178,7 +178,7 @@ def _create_html_viewer(
             visibility: hidden;
         }
 
-        #ipyplot-html-viewer-label-%(1)s { 
+        #ipyplot-html-viewer-label-%(1)s {
             position: relative;
             display: inline-block;
             cursor: pointer;
@@ -205,7 +205,7 @@ def _create_html_viewer(
             left: 0;
             right: 0;
             bottom: 0;
-            background: white;
+            background:rgb(17,17, 17);
             cursor: pointer;
             color: blue;
             text-decoration: underline;
@@ -264,9 +264,9 @@ def _create_img(
         Additional text to be displayed above the image but below the label name.
         Defaults to None.
     show_url : bool, optional
-        Defines if the urls are displayed as text above the images. 
+        Defines if the urls are displayed as text above the images.
     force_b64 : bool, optional
-        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.  
+        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.
         Do mind that using b64 conversion vs reading directly from filepath will be slower.
         You might need to set this to `True` in environments like Google colab.
         Defaults to False.
@@ -367,9 +367,9 @@ def _create_imgs_grid(
         Best to keep between 1.0~5.0.
         Defaults to 2.5.
     show_url : bool, optional
-        Defines if the urls are displayed as text above the images. 
+        Defines if the urls are displayed as text above the images.
     force_b64 : bool, optional
-        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.  
+        You can force conversion of images to base64 instead of reading them directly from filepaths with HTML.
         Do mind that using b64 conversion vs reading directly from filepath will be slower.
         You might need to set this to `True` in environments like Google colab.
         Defaults to False.
@@ -444,12 +444,12 @@ def _get_default_style(img_width: int, zoom_scale: float):
 
         div.ipyplot-content-div-%(0)s {
             width: %(1)spx;
-            background: white;
+            background:rgb(17, 17, 17);
             display: inline-block;
             vertical-align: top;
             text-align: center;
             position: relative;
-            border: 2px solid #ddd;
+            border: 0px solid #ddd;
             top: 0;
             left: 0;
         }
