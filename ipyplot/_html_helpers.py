@@ -213,7 +213,6 @@ def _create_html_viewer(
     </style>
     <div>
         <input type="checkbox" id="ipyplot-html-viewer-toggle-%(1)s">
-        <label id="ipyplot-html-viewer-label-%(1)s" for="ipyplot-html-viewer-toggle-%(1)s">show html</label>
         <textarea id="ipyplot-html-viewer-textarea-%(1)s" readonly>
             %(0)s
         </textarea>
@@ -315,7 +314,6 @@ def _create_img(
     html = """
     <div class="ipyplot-placeholder-div-%(0)s">
         <div id="ipyplot-content-div-%(0)s-%(1)s" class="ipyplot-content-div-%(0)s">
-            <h4 style="font-size: 12px; word-wrap: break-word;">%(2)s</h4>
             %(3)s
             <a href="#!">
                 <span class="ipyplot-img-close"/>
@@ -389,6 +387,11 @@ def _create_imgs_grid(
 
     # create code with style definitions
     html, grid_style_uuid = _get_default_style(img_width, zoom_scale)
+    
+    if max_images>0:
+        elts2disp = zip(images[:max_images], labels[:max_images],custom_texts[:max_images])
+    else:
+        elts2disp = zip(images[max_images:], labels[max_images:],custom_texts[max_images:])
 
     html += '<div id="ipyplot-imgs-container-div-%s">' % grid_style_uuid
     html += ''.join([
@@ -399,9 +402,7 @@ def _create_imgs_grid(
             force_b64=force_b64,
             resize_image=resize_image
         )
-        for x, y, text in zip(
-            images[:max_images], labels[:max_images],
-            custom_texts[:max_images])
+        for x, y, text in elts2disp
     ])
     html += '</div>'
     return html
