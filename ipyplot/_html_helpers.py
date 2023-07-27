@@ -387,7 +387,6 @@ def _create_imgs_grid(
 
     # create code with style definitions
     html, grid_style_uuid = _get_default_style(img_width, zoom_scale)
-    
     if max_images>0:
         elts2disp = zip(images[:max_images], labels[:max_images],custom_texts[:max_images])
     else:
